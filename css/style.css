@@ -1,0 +1,2526 @@
+
+
+
+
+
+  
+
+
+
+body{
+  line-height: 1.5;
+  
+  font-weight: 400;
+  overflow-x: hidden;
+
+}
+*{
+  margin:0;
+  box-sizing: border-box;
+  cursor: url(../img/moon.gif), pointer;
+}
+:before,:after{
+  box-sizing: border-box;
+}
+
+
+
+
+/* Menu */ 
+
+#nav-bar { 
+           position: sticky; /* posizionamento fisso del menu allo scrolling della pagina */
+           top: 0;
+           z-index: 10; 
+          
+           
+         } 
+
+.header {
+  background-color: #FAD1CD;
+ font-family: 'Kanit', sans-serif;
+}
+
+.container-menu {
+  max-width: 1200px;
+  margin:auto;
+  margin-top: -5px;
+  margin-bottom: -20px;
+
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+.v-center{
+  align-items: center;
+}
+ul{
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+.header a{
+  text-decoration: none;
+}
+/* header */
+.header{
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 99;
+  padding:15px;
+}
+.header .item-left{
+  flex:0 0 17%;
+}
+
+.header .item-center{
+  flex:0 0 66%;
+}
+.header .item-right{
+  flex:0 0 17%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+.header .item-right a{ 
+     text-decoration: none;
+     font-size: 25px;
+     color:#996666; /* colore icone  */
+     display: inline-block;
+     margin-left: 10px;
+     transition: color 0.3s ease;
+}
+.header .menu > ul > li{
+  display: inline-block;
+  line-height: 50px;
+  margin-left: 25px;
+}
+.header .menu > ul > li > a{
+  font-size: 17px;
+  font-weight: 500;
+  color:#996666; /* colore voci menu */
+  position: relative;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+.header .menu > ul > li .sub-menu{
+  position: absolute;
+  z-index: 500;
+  background-color:#fff; /* non so cos'è */
+  box-shadow: -2px 2px 70px -25px rgba(0,0,0,0.3); 
+  padding: 20px 30px;
+  transition: all 0.5s ease;
+  margin-top:25px;
+  opacity:0;
+  visibility: hidden;
+}
+@media(min-width: 992px){
+.header .menu > ul > li.menu-item-has-children:hover .sub-menu{
+  margin-top: 0;
+  visibility: visible;
+  opacity: 1;
+}
+}
+.header .menu > ul > li .sub-menu > ul > li{
+  line-height: 1;
+}
+.header .menu > ul > li .sub-menu > ul > li > a{
+  display: inline-block;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #555; /* non so cos'è */
+  transition: color 0.3s ease;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.header .menu > ul > li .single-column-menu{
+  min-width: 280px;
+  max-width: 350px;
+}
+.header .menu > ul > li .sub-menu.mega-menu > .list-item > ul > li{
+   line-height: 1;
+   display: block; 
+}
+.header .menu > ul > li .sub-menu.mega-menu > .list-item > ul > li > a {
+  padding:10px 0;
+  display: inline-block;
+  font-size: 15px;
+  color:#555; /* non so cos'è */
+  transition: color 0.3s ease;
+}
+.header .menu > ul > li .sub-menu.mega-menu{ 
+    left: 50%;
+    transform: translateX(-50%);  
+}
+
+.header .menu > ul > li .sub-menu.mega-menu-column-4{
+  max-width: 1100px;
+  width: 100%;  
+  display: flex;
+  flex-wrap: wrap;
+  padding:20px 15px;
+}
+.header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item{
+  flex:0 0 25%;
+  padding:0 15px;
+}
+.header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item .title{
+  font-size: 16px;
+  
+  font-weight: 500;
+  line-height: 1;
+  padding:10px 0;
+}
+.header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item.text-center .title{
+  text-align: center;
+}
+.header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item img{
+  max-width: 100%;
+  width: 100%;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+.header .menu > ul > li .sub-menu.mega-menu > .list-item > ul > li > a:hover,
+.header .menu > ul > li .sub-menu > ul > li > a:hover,
+.header .item-right a:hover,
+.header .menu > ul > li:hover > a{
+  color:#bf8080;  /* colore testo menu al passaggio del cursore */
+}
+/* banner section */
+
+.mobile-menu-head,
+.mobile-menu-trigger{
+  display: none;
+}
+
+/*responsive*/
+@media(max-width: 991px){
+
+  .header .item-center{
+    order:3;
+    flex:0 0 100%;
+  }
+  .header .item-left,
+  .header .item-right{
+    flex:0 0 auto;
+  }
+  .v-center{
+    justify-content: space-between;
+  }
+  .header .mobile-menu-trigger{
+    display: flex;
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+  .header .mobile-menu-trigger span{
+    display: block;
+    height: 2px;
+    background-color: #996666; /* colore icona panino */
+    width: 24px;
+    position: relative;
+  }
+  .header .mobile-menu-trigger span:before,
+  .header .mobile-menu-trigger span:after{
+    content: '';
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #996666; /* colore icona panino */
+  }
+  .header .mobile-menu-trigger span:before{
+    top:-6px;
+  }
+  .header .mobile-menu-trigger span:after{
+    top:6px;
+  }
+  .header .item-right{
+    align-items: center;
+  }
+
+  .header .menu{
+    position: fixed;
+    width: 320px;
+    background-color:#fff; /* colore sfondo apertura menu mobile */
+    left:0;
+    top:0;
+    height: 100%;
+    overflow: hidden;
+    transform: translate(-100%);
+    transition: all 0.5s ease;
+    z-index: 1099;
+  }
+  .header .menu.active{
+     transform: translate(0%);  
+  }
+  .header .menu > ul > li{
+    line-height: 1;
+    margin:0;
+    display: block;
+  }
+  .header .menu > ul > li > a{
+    line-height: 50px;
+    height: 50px;
+    padding:0 50px 0 15px;
+    display: block;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .header .menu > ul > li > a i{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top:0;
+    right: 0;
+    text-align: center;
+    line-height: 50px;
+    transform: rotate(-90deg);
+  }
+  .header .menu .mobile-menu-head{
+    display: flex;
+    height: 50px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 501;
+    position: sticky;
+    background-color: #fff; /* colore sfondo parte alta apertura menu mobile */
+    top:0;
+  }
+  .header .menu .mobile-menu-head .go-back{
+    height: 50px;
+    width: 50px;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+    color:#996666; /* colore icona freccia indietro */
+    font-size: 16px;
+    display: none;
+  }
+  .header .menu .mobile-menu-head.active .go-back{
+    display: block;
+  }
+  .header .menu .mobile-menu-head .current-menu-title{
+    font-size: 15px;
+    font-weight: 500;
+    color:#996666; /* colore breve titolo apertura menu mobile */
+  }
+  .header .menu .mobile-menu-head .mobile-menu-close{
+      height: 50px;
+    width: 50px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+    color:#996666; /* colore icona x */  
+    font-size: 25px;
+  }
+  .header .menu .menu-main{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .header .menu > ul > li .sub-menu.mega-menu,
+  .header .menu > ul > li .sub-menu{
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    box-shadow: none;
+    margin:0;
+    padding:15px;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    padding-top: 65px;
+    max-width: none;
+    min-width: auto;
+    display: none;
+    transform: translateX(0%);
+    overflow-y: auto;
+  }
+.header .menu > ul > li .sub-menu.active{
+  display: block;
+}
+@keyframes slideLeft{
+  0%{
+    opacity:0;
+    transform: translateX(100%);
+  }
+  100%{
+      opacity:1;
+    transform: translateX(0%);  
+  }
+}
+@keyframes slideRight{
+  0%{
+    opacity:1;
+    transform: translateX(0%);
+  }
+  100%{
+      opacity:0;
+    transform: translateX(100%);  
+  }
+}
+  .header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item img{
+    margin-top:0;
+  }
+  .header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item.text-center .title{
+    margin-bottom: 20px;
+  }
+  .header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item.text-center:last-child .title{
+    margin-bottom:0px;
+  }
+  .header .menu > ul > li .sub-menu.mega-menu-column-4 > .list-item{
+    flex: 0 0 100%;
+        padding: 0px;
+  }
+  .header .menu > ul > li .sub-menu > ul > li > a,
+  .header .menu > ul > li .sub-menu.mega-menu > .list-item > ul > li > a{
+    display: block;
+  }
+  .header .menu > ul > li .sub-menu.mega-menu > .list-item > ul {
+    margin-bottom: 15px;
+  }
+  .menu-overlay{
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    z-index: 1098;
+    visibility: hidden;
+    opacity:0;
+    transition: all 0.5s ease;
+  }
+  .menu-overlay.active{
+    visibility: visible;
+    opacity:1;  
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Benvenuto */
+#welcome { 
+           background-image: url(../img/benvenuto.jpg);
+           background-size: cover;
+           background-position: top;
+           background-attachment: fixed;
+           padding-top: 100px; /* ingrandimento superiore immagine */
+           padding-bottom: 100px; /* ingrandimento inferiore immagine */
+         }
+
+#welcome h1 { 
+              text-align: center;
+              color: #fff; /* colore testo */ 
+              font-family: 'Kanit', sans-serif;
+              font-size: 60px; /* dimensione testo */
+              padding-top: 10px; /* posizione testo */
+              padding-bottom: 10px;
+            }
+
+#welcome h2,
+#welcome h3,
+#welcome h4 { 
+              text-align: center;
+              color: #fff; 
+              font-family: 'Kanit', sans-serif;
+              font-size: 30px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+            } 
+
+/* Chi sono */
+#about h1 { 
+            text-align: center;
+            color: #996666;
+            font-family: 'Kanit', sans-serif;
+            font-size: 40px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+          }
+
+#about p { 
+           text-align: justify;
+           color: #555;
+           font-family: 'News+Cycle', sans-serif;
+           font-size: 18px;
+           padding-top: 30px; 
+           padding-bottom: 10px;
+           margin-left: 30px;
+           margin-right: 30px;
+
+
+         }
+
+#about .image-btn { 
+                 background-image: url(../img/bottone.jpg);
+                 background-size: cover;
+                 background-position: center;
+                 padding-top: 50px;
+                 padding-bottom: 50px; 
+                 margin-left: 27px;
+                 margin-right: 27px;
+                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+                 border-radius: 15px;
+                 
+               } 
+#about .btn { 
+              background-color: #996666;
+              border-color: #996666;
+              font-size: 18px;
+              padding-top: 8px;
+              padding-bottom: 6px;
+              margin-top: 20%; /* posizione del bottone */
+              border-radius: 10px;
+            }
+
+#about .btn:hover { 
+                  background-color: #B57979;
+                  border-color: #B57979;
+                            cursor: pointer;
+                            
+
+               
+               }
+
+/* Certificazioni */
+#certification h1 {
+  text-align: center;
+            color: #996666;
+            font-family: 'Kanit', sans-serif;
+            font-size: 40px;
+            padding-top: 60px;
+            padding-bottom: 50px; 
+}
+
+#btn2 button{
+    width: 100px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.5s ease;
+    cursor: url(../img/moon.gif), pointer;
+}
+#btn2 button:hover{
+    background-color: #f5f5f5;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Mi occupo di */
+#services { 
+            background-image: url(../img/servizi.jpg);
+            background-size: cover;
+            background-position: bottom;
+            color: #fff;
+            background-attachment: fixed;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            margin-top: 50px;
+            
+          }
+
+#services h1 { 
+               font-size: 40px;
+               color: #fff;
+               text-align: center; 
+               font-family: 'Kanit', sans-serif;
+               padding-bottom: 60px; 
+             }
+
+
+            
+            
+
+#services a { 
+              text-align: center; 
+              color: #fff;
+              font-size: 25px;
+              padding-bottom: 10px; 
+            }
+
+#services h2 { 
+           text-align: center;
+           color: #fff;
+           font-family: 'News+Cycle', sans-serif;
+           font-size: 20px;
+           padding-top: 25px;
+           padding-bottom: 10px;
+ 
+
+         }
+
+#services h3 {
+text-align: center;
+           color: #fff;
+           font-family: 'News+Cycle', sans-serif;
+           font-size: 20px;
+           padding-top: 10px;
+           
+}
+
+#services .icon { 
+
+        font-size: 40px; 
+        margin: 20px auto;
+        padding: 6px; /* centramento contorno icone */
+        height: 80px; 
+        width: 80px;
+        border: 3px solid #fff; /* contorno icone */
+        border-radius: 20%; /* forma circolare contorno icone */
+      }
+
+
+#services .reiki:hover { 
+                            background-image: url(../img/reiki.jpg);
+                            background-size: cover;
+
+                            
+                            padding: 60px;
+                            border-radius: 20px;
+                            cursor: pointer;
+                            transition: 0.7s;
+                            cursor: url(../img/moon.gif), pointer;
+                          }  
+
+#services .body:hover { 
+                            background-image: url(../img/body.jpg);
+                              background-size: cover;
+
+                           
+                            padding: 60px;
+                            border-radius: 20px;
+                            cursor: pointer;
+                            transition: 0.7s;
+                            cursor: url(../img/moon.gif), pointer;
+                          }    
+
+
+
+#services .family:hover { 
+                            background-image: url(../img/family.jpg);
+                            background-size: cover;
+
+                           
+                           padding: 60px;
+                            border-radius: 20px;
+                            cursor: pointer;
+                            transition: 0.7s;
+                            cursor: url(../img/moon.gif), pointer;
+                          }  
+
+/* Corsi ed Eventi */
+#past-events { 
+          background-image: url(../img/eventi.jpg);
+          background-size: cover;
+          background-position: top;
+          
+          background-attachment: fixed;
+          padding-top: 70px;
+          padding-bottom: 40px; 
+          margin top: 50px;
+        
+        }
+
+
+
+#past-events h1 { 
+  font-size: 40px;
+             color: #fff;
+             text-align: center; 
+             font-family: 'Kanit', sans-serif;
+             padding-bottom: 40px; 
+           }
+
+
+
+#past-events h2  { 
+             text-align: center; 
+            font-size: 20px;
+            color: #fff  !important;
+            padding-bottom: 10px; 
+            font-family: 'News+Cycle', sans-serif; 
+          }
+
+
+#past-events .icon { 
+        color: #FFF;
+        font-size: 25px; 
+        margin: 20px auto;
+        padding: 8px; /* centramento contorno icone */
+        height: 60px; 
+        width: 60px;
+        border: 3px solid #FFF; /* contorno icone */
+        border-radius: 20%; /* forma circolare contorno icone */
+      }
+
+#past-events p { 
+             color:#FFF ;
+              font-family: 'News+Cycle', sans-serif;
+           
+            font-size: 15px; /* dimensione scritte sottostanti al nome dei locali */
+            margin-top: 20px; 
+            margin-bottom: 20px;
+          } 
+
+
+
+
+#events { 
+          background-image: url(../img/eventi.jpg);
+          background-size: cover;
+          background-position: top;
+          
+          background-attachment: fixed;
+        
+          padding-bottom: 80px; 
+         
+
+        }
+
+#events h1 { 
+  font-size: 40px;
+             color: #fff;
+             text-align: center; 
+             font-family: 'Kanit', sans-serif;
+             padding-bottom: 40px; 
+           }
+
+
+
+#events h2  { 
+             text-align: center; 
+            font-size: 25px;
+            color: #fff  !important;
+            padding-bottom: 10px; 
+            font-family: 'News+Cycle', sans-serif; 
+          }
+
+#events .icon { 
+        color: #fff;
+        font-size: 25px; 
+        margin: 20px auto;
+        padding: 8px; /* centramento contorno icone */
+        height: 60px; 
+        width: 60px;
+        border: 3px solid #fff; /* contorno icone */
+        border-radius: 20%; /* forma circolare contorno icone */
+      }
+
+#events p { 
+             color:#fff ;
+              font-family: 'News+Cycle', sans-serif;
+           
+            font-size: 20px; /* dimensione scritte sottostanti al nome dei locali */
+           
+             margin-top: 20px; 
+            margin-bottom: 20px;
+
+          } 
+
+#events .events .col-md-4:hover { 
+                          background: #996666;
+                          padding: 10px;
+                            border-radius: 20px;
+                            cursor: pointer;
+                            transition: 0.7s; 
+                            cursor: url(../img/moon.gif), pointer;
+                        } 
+
+
+/* Until we meet again */
+#final-greetings { 
+           background-image: url(../img/final.greetings.jpg);
+           background-size: cover;
+           background-position: top;
+           background-attachment: fixed;
+           padding-top: 100px; /* ingrandimento superiore immagine */
+           padding-bottom: 100px; /* ingrandimento inferiore immagine */
+         }
+
+#final-greetings h1 { 
+              text-align: left;
+              color: #996666; /* colore testo */ 
+              font-family: 'Kanit', sans-serif;
+              font-size: 50px; /* dimensione testo */
+              padding-top: 10px; /* posizione testo */
+
+              padding-bottom: 10px;
+            }
+
+#final-greetings h2,
+#final-greetings h3 { 
+              text-align: left;
+              color: #996666; 
+              font-family: 'Kanit', sans-serif;
+              font-size: 30px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+            } 
+
+/* Contatti */
+#contact {
+           background-image: url(../img/contatti.jpg);
+           background-size: cover;
+           background-position: top;
+           background-attachment: fixed;
+           padding-top: 150px;
+           padding-bottom: 150px;
+         }
+
+.contact { 
+           width: 80%;
+           background: #fff;
+           border-radius: 20px;
+           padding: 60px 60px 60px 40px;
+           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);        
+         }
+
+.contact .content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  }
+
+.contact .content .left-side {
+                               width: 80%;
+                               height: 100%;
+                               display: flex;
+                               flex-direction: column;
+                               align-items: center;
+                               justify-content: center;
+                               margin-top: 10px; 
+                               position: relative;
+
+                             }
+
+.content .left-side::before {
+                              content: "";
+                              position: absolute;
+                              height: 80%;
+                              width: 2px;
+                              right: -15px;
+                              top: 50%;
+                              transform: translateY(-50%);
+                              background: #8f8f8f;
+                            }
+
+.content .left-side .details {
+                               text-align: center;
+                               margin: 14px;
+                             }
+
+
+.content .left-side .details i {
+                                 color: #996666;
+                                 font-size: 30px;
+                                 margin-bottom: 10px;
+                               }
+
+
+
+
+.content .left-side .details .text { 
+                                     color: #555;
+                                     font-size: 16px;
+                                     font-weight: 400;
+                                   }
+
+.content .left-side .details a {
+                                      
+                                      color: #555!important;
+
+}
+
+.content .left-side .details a:hover {
+                                      
+                                      color: #707070 !important;
+
+}
+
+.content .left-side .address {
+                              margin-bottom: 25px;
+}
+
+.content .left-side .phone {
+                              margin-bottom: 40px; 
+}
+
+
+.content .left-side .email {
+                              margin-bottom: 35px; 
+}
+
+
+.contact .content .right-side {
+                                width: 80%;
+                                margin-left: 75px;
+
+
+                              }
+
+.content .right-side .text-one {
+                                 color: #555;
+                                 font-size: 25px;
+                                 font-weight: 600;                           
+                               }
+
+.content .right-side .text-two {
+                                 color: #555;
+                                 font-size: 19px;
+                                 font-weight: 600;
+                                 margin-top: 20px;                           
+                               }
+
+.right-side .button {
+                      display: inline-block;
+                      margin-top: 20px;
+
+                    }
+
+.right-side .button input[type="button"] {
+                                           color: #fff;
+                                           font-size: 18px;
+                                           font-weight: 600;
+                                           outline: none;
+                                           border: none;
+                                           padding: 8px 16px;
+                                           border-radius: 10px;
+                                           background: #996666;
+                                           cursor: pointer;
+                                           transition: all 0.3s ease;
+                                         }
+
+.button input[type="button"]:hover {
+                                     background: #B57979; 
+                                     cursor: url(../img/moon.gif), pointer;
+                                   }
+
+.content .right-side .text-three {
+                                 color: #555;
+                                 font-size: 16px;
+                                 font-weight: 600;
+                                 margin-top: 20px;                           
+                               }
+
+.content .right-side .telephone {
+                                 
+                                 margin-top: 20px;
+                                 
+                               }
+
+.content .right-side .telephone i {
+    color: #996666;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.content .right-side .telephone a {
+  color: #555 !important;
+  font-size: 16px;
+}
+
+
+
+
+
+@media (max-width: 950px) {
+.contact { 
+           width: 90%;
+           padding: 30px 35px 40px 35px;
+         }
+}
+
+@media (max-width: 820px) {
+.contact { 
+           margin: 40px 0; 
+           height: 100%;           
+         }
+
+.contact .content {
+                    flex-direction: column-reverse;
+                  }
+
+.contact .content .left-side  {
+                                width: 100%;
+                                flex-direction: row;
+                                margin-top: 40px;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                              }                        
+
+.contact .content .left-side::before {
+                                       display: none;
+                                     }
+
+.contact .content .right-side {
+                                width: 100%;
+                                margin-left: 0;
+                              }
+}
+
+
+
+
+/* Footer */
+footer { 
+          background: #fff;
+          height: auto;
+          padding-top: 10px;
+        }
+
+.footer-content {
+            
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+}
+
+
+
+.footer-content h1 {
+            color: #996666;
+            font-family: 'Kanit', sans-serif;
+            font-size: 18px;
+            position: relative;
+            margin-top: 5px;
+            margin-bottom: 10px;
+ 
+  
+}
+
+.socials {
+
+  list-style: none;
+  display: flex;
+  font-size: 30px;
+
+
+  
+}
+
+.socials li {
+  margin: 0px 40px 20px 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #996666;
+}
+
+.socials .bi-linkedin:hover { 
+                                          color:  #0072b1; 
+                                        }
+
+
+
+.socials .bi-facebook:hover { 
+                                          color:  #3b5998; 
+                                        }
+
+.socials .bi-instagram:hover {
+                                  color: transparent;
+  background: -webkit-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -o-radial-gradient(30% 107%, circle, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+
+}
+
+
+.footer-content p {
+            color: #996666;
+            font-family: 'Kanit', sans-serif;
+            font-size: 15px;
+            position: relative;
+            margin-top: -10px;
+             
+ 
+  
+}
+
+.footer-content a {
+            color: #996666;
+          }
+           
+
+.footer-content a:hover    {
+                                      
+                                      color: #B57979 !important;
+                                    }
+
+
+
+
+
+
+
+/* Scopri di più su di me */
+
+/* Benvenuto */
+
+#welcome-name {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(../img/welcome-name.jpg);
+  height: 55vh;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+.banner-text {
+  position: absolute;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+
+/*text animation*/
+
+.text-area {
+  font-size: 70px;
+  text-transform: uppercase;
+  
+   font-family: 'Kanit', sans-serif;
+}
+.text-area span {
+
+                
+              
+             
+              
+
+
+  color: #fff;
+  opacity: 0;
+  transform: translate(0, -100px) rotate(360deg) scale(0);
+  animation: animate 5s forwards;
+}
+.text-area span {
+  display: inline-block;
+}
+.text-area span:nth-of-type(2) {
+  animation-delay: .1s;
+}
+.text-area span:nth-of-type(3) {
+  animation-delay: .2s;
+}
+.text-area span:nth-of-type(4) {
+  animation-delay: .3s;
+}
+.text-area span:nth-of-type(5) {
+  animation-delay: .4s;
+}
+.text-area span:nth-of-type(6) {
+  animation-delay: .5s;
+}
+.text-area span:nth-of-type(7) {
+  animation-delay: .6s;
+}
+.text-area span:nth-of-type(8) {
+  animation-delay: .7s;
+}
+.text-area span:nth-of-type(9) {
+  animation-delay: .8s;
+}
+.text-area span:nth-of-type(10) {
+  animation-delay: .9s;
+}
+
+
+
+
+
+
+@keyframes animate {
+  30% {
+    transform: translate(0, -50px) rotate(180deg) scale(1);
+  }
+  60% {
+    transform: translate(0, 20px) scale(.8) rotate(0deg);
+  }
+  100% {
+    transform: translate(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+ 
+
+  .text-area {
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  
+
+  .banner-text p {
+    display: none;
+  }
+
+  .text-area {
+    font-size: 20px;
+  }
+}
+
+
+
+
+   
+
+/* Piacere, sono Alessandra */
+#about-me { 
+
+        background-image: url(../img/about-me.jpg);
+            
+            background-position: center;
+            background-attachment: fixed;
+
+            
+          padding-bottom: 50px; 
+        
+         text-align: justify;
+         padding-top: 50px;
+             margin-right: 70px;
+         margin-left: 70px;
+         
+       
+       }
+
+#about-me h1 { 
+            color: #555;
+            
+           
+     
+    
+
+                    margin-bottom: 30px;
+                    font-size: 30px;
+                    font-weight: 900;
+                    font-family: 'Lobster', sans-serif;
+                    text-align: center;
+          }
+
+
+
+
+
+#about-me p  { 
+                   font-size: 18px;
+      font-family: 'News+Cycle', sans-serif;
+      color: #555;
+      line-height: 30px;
+      text-align: justify;
+      
+
+
+        
+
+     
+ 
+
+               } 
+
+
+
+
+ 
+/* Piacere, sono Alessandra - parte 2 */
+
+#about-me-2 { 
+
+        background-image: url(../img/about-me.jpg);
+            
+            background-position: center;
+            background-attachment: fixed;
+
+            
+          padding-bottom: 50px; 
+       
+         text-align: justify;
+        
+             margin-right: 70px;
+         margin-left: 70px;
+         
+       
+       }
+
+ 
+
+
+
+
+
+#about-me-2 p  { 
+                   font-size: 18px;
+      font-family: 'News+Cycle', sans-serif;
+      color: #555;
+      line-height: 30px;
+      text-align: justify;
+      
+
+
+        
+
+     
+
+               } 
+
+/* Attestati */ 
+
+
+.wrapper .title{
+    text-align: center;
+}
+
+.title h1{
+    font-size: 45px;
+             color: #555;
+             text-align: center; 
+             font-family: 'Kanit', sans-serif;
+             padding-top: 80px;
+  padding-bottom: 10px;
+    
+   
+}
+
+.wrapper .card_Container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.card_Container .card{
+    position: relative;
+    width: 368px;
+    height: 310px;
+    margin: 20px;
+    overflow: hidden;
+    
+
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .imbBx, .imbBx img{
+    width: 100%;
+    height: 100%;
+}
+
+.card .content{
+    position: absolute;
+    bottom: -160px;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: bottom 0.5s;
+    transition-delay: 0.65s;
+}
+
+.card:hover .content{
+    bottom: 0;
+    transition-delay: 0s;
+}
+
+.content .contentBx h2{
+   
+    color: #555;
+   
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition: 0.5s;
+    transition-delay: 0.6s;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.card:hover .content .contentBx h2{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content .contentBx h2 span{
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+
+.content .contentBx h3{
+   
+    color: #555;
+   
+    font-size: 15px;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition: 0.5s;
+    transition-delay: 0.6s;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.card:hover .content .contentBx h3{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content .contentBx h3 span{
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+
+
+
+
+
+/* Formazione */
+
+#about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  background-image: url(../img/about-me-training.jpg);
+          background-size: cover;
+          background-position: top;
+          
+          background-attachment: fixed;
+               padding-top: 100px;
+            padding-bottom: 100px;
+           
+ margin-right: 60px;
+         margin-left: 60px;
+
+}
+
+
+.box {
+  width: 100%;
+  max-width: 1170px;
+  padding: 15px;
+   
+
+
+
+
+
+
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+
+
+
+
+}
+.cardss {
+  width: 30%;
+  padding: 30px 20px;
+  border-radius: 20px;
+  transition: transform .3s;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+
+ 
+                           
+
+                            margin-bottom: 30px;
+                            
+                            padding-top: 47px;
+                           
+                   
+
+
+}
+.cardss-content {
+  color: #fff;
+}
+.cardss-content h2 {
+  
+   text-align: center; 
+            font-size: 15px;
+            color: #555  !important;
+          
+            font-family: 'News+Cycle', sans-serif; 
+}
+.cardss-content p {
+    text-align: center; 
+            font-size: 15px;
+            color: #555  !important;
+          
+
+            font-family: 'News+Cycle', sans-serif;
+}
+
+
+
+
+
+
+.icons {
+  color: #555;
+        font-size: 20px; 
+        margin: 20px auto;
+        padding: 8px; 
+        height: 50px; 
+        width: 50px;
+        border: 3px solid #555; 
+        border-radius: 20%; 
+}
+
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #about-section {
+    height: auto;
+  }
+  .box {
+    padding: 20px;
+  }
+  .cardss {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .box h1 {
+    font-size: 1.5rem
+  }
+  .cards {
+    justify-content: center;
+  }
+  .cardss {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+/* Formazione */
+
+/*
+
+
+#about-me-training .title {
+
+  background-color: #fff;
+
+             margin-right: 30px;
+                            margin-left: 30px;
+
+                            margin-bottom: 30px;
+                            
+                            padding-top: 47px;
+                           
+                            border-radius: 20px;
+                             height: 250px; 
+        width: 350px;
+
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+/* Reiki */
+
+
+/* Benvenuto */
+#welcome-reiki { 
+           background-image: url(../img/welcome-reiki.png);
+           background-size: cover;
+           background-position: top;
+           background-attachment: fixed;
+           padding-top: 100px; /* ingrandimento superiore immagine */
+           padding-bottom: 100px; /* ingrandimento inferiore immagine */
+         }
+
+#welcome-reiki h1 { 
+              text-align: center;
+              color: #fff; /* colore testo */ 
+              font-family: 'Kanit', sans-serif;
+              font-size: 60px; /* dimensione testo */
+              padding-top: 10px; /* posizione testo */
+              padding-bottom: 10px;
+            }
+
+#welcome-reiki h2,
+#welcome-reiki h3 { 
+              text-align: center;
+              color: #fff; 
+              font-family: 'Kanit', sans-serif;
+              font-size: 30px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+            } 
+
+/* Breve presentazione */
+#about-reiki h1 { 
+            text-align: center;
+            color: #996666;
+            font-family: 'Kanit', sans-serif;
+            font-size: 40px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+          }
+
+#about-reiki p { 
+           text-align: justify;
+           color: #555;
+           font-family: 'News+Cycle', sans-serif;
+           font-size: 18px;
+           padding-top: 30px; 
+           padding-bottom: 10px;
+           margin-left: 30px;
+           margin-right: 30px;
+
+
+         }
+
+#about-benefits-reiki, #about-me-reiki {
+ background-image: url(../img/about-reiki.jpg);
+            background-size: 1400px;
+            background-position: top;
+            background-attachment: fixed;
+
+            
+          padding-bottom: 100px; 
+         
+
+           
+         
+           
+           
+          
+
+}
+
+
+/* I benefici del Reiki */
+#about-benefits-reiki { 
+
+        
+         margin-left: 60px;
+         text-align: justify;
+         padding-top: 50px;
+             margin-right: 70px;
+         margin-left: 70px;
+         
+       
+       }
+
+#about-benefits-reiki h1 { 
+            color: #996666;
+            
+           
+     
+    
+        margin-left: 30px;
+                    padding-top: 20px;
+                    margin-bottom: 30px;
+                    font-size: 30px;
+                    font-weight: 900;
+                    font-family: 'Kanit', sans-serif;
+                    text-align: center;
+          }
+
+
+
+.about-benefits-reiki-content { 
+                   font-size: 18px;
+      font-family: 'News+Cycle', sans-serif;
+      color: #555;
+      line-height: 30px;
+      text-align: justify;
+      margin-left: 30px;
+         margin-right: 30px;
+
+
+        
+
+     
+      margin-bottom: 20px; 
+
+               } 
+
+#about-benefits-reiki .about-benefits-reiki-image { 
+                 background-image: url(../img/about-benefits-reiki.jpg);
+                 background-size: cover;
+                 background-position: bottom;
+                 padding-top: 200px;
+               
+                 padding-bottom: 200px;
+
+
+
+               } 
+
+
+ 
+/* Se siete interessati al Reiki */
+
+
+
+
+
+#about-me-reiki { 
+
+         text-align: justify;
+    
+             margin-right: 70px;
+         margin-left: 70px;
+         
+       
+       }
+
+#about-me-reiki h1 { 
+
+            color: #996666;
+            
+           
+     
+    
+        margin-left: 30px;
+                    padding-top: 20px;
+                    margin-bottom: 30px;
+                    font-size: 30px;
+                    font-weight: 900;
+                    font-family: 'Kanit', sans-serif;
+                    text-align: center;
+          }
+
+
+.about-me-reiki-content { 
+                   font-size: 18px;
+      font-family: 'News+Cycle', sans-serif;
+      color: #555;
+      line-height: 30px;
+      text-align: justify;
+     
+   margin-left: 30px;
+   margin-right: 30px;
+
+
+        margin-top: 40px;
+
+     
+      margin-bottom: 40px; 
+
+               } 
+
+.about-me-reiki-content a {
+  color: #555;
+}
+
+.about-me-reiki-content a:hover {
+ color: #996666;
+}
+
+
+#about-me-reiki .about-me-reiki-image { 
+                 background-image: url(../img/about-me-reiki.jpeg);
+                 background-size: cover;
+                 background-position: center;
+                 padding-top: 200px;
+               
+                 padding-bottom: 200px;
+
+
+
+               } 
+
+  
+
+
+
+/* Trattamento psico corporeo */
+
+
+/* Benvenuto */
+
+#welcome-body { 
+           background-image: url(../img/welcome-body.jpeg);
+           background-size: cover;
+           background-position: top;
+           background-attachment: fixed;
+           padding-top: 100px; /* ingrandimento superiore immagine */
+           padding-bottom: 100px; /* ingrandimento inferiore immagine */
+         }
+
+#welcome-body h1 { 
+              text-align: center;
+              color: #fff; /* colore testo */ 
+              font-family: 'Kanit', sans-serif;
+              font-size: 60px; /* dimensione testo */
+              padding-top: 10px; /* posizione testo */
+              padding-bottom: 10px;
+            }
+
+#welcome-body h2,
+#welcome-body h3 { 
+              text-align: center;
+              color: #fff; 
+              font-family: 'Kanit', sans-serif;
+              font-size: 30px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+            } 
+
+/* Breve presentazione */
+#about-body h1 { 
+            text-align: center;
+            color: #996666;
+            font-family: 'Kanit', sans-serif;
+            font-size: 40px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+          }
+
+#about-body .image {
+  padding-bottom: 20px;
+}          
+
+#about-body h2 {
+       
+color: #555;
+            
+           
+     
+    
+        margin-left: 30px;
+                    padding-top: 20px;
+                    margin-bottom: 2px;
+                    font-size: 18px;
+                    
+                    font-family: 'News+Cycle', sans-serif;
+                    text-align: center;
+
+
+
+
+
+}
+
+#about-body p { 
+           text-align: justify;
+           color: #555;
+           font-family: 'News+Cycle', sans-serif;
+           font-size: 18px;
+           padding-top: 30px; 
+           padding-bottom: 10px;
+           margin-left: 30px;
+           margin-right: 30px;
+
+
+         }
+
+
+
+#about-benefits-ayurvedico, #about-benefits-integrazione {
+ background-image: url(../img/about-benefits-body.jpg);
+            background-size: 95%;
+            background-position: top;
+            background-attachment: fixed;
+
+            
+          padding-bottom: 100px; 
+         
+
+           
+         
+           
+           
+          
+
+} 
+
+
+/* I benefici dei trattamenti psico corporei */
+#about-benefits-ayurvedico { 
+
+        
+         margin-left: 60px;
+         text-align: justify;
+         padding-top: 50px;
+             margin-right: 70px;
+         margin-left: 70px;
+         
+       
+       }
+
+#about-benefits-ayurvedico h1 { 
+            color: #996666;
+            
+           
+     
+    
+        margin-left: 30px;
+                    padding-top: 20px;
+                    margin-bottom: 30px;
+                    font-size: 30px;
+                    font-weight: 900;
+                    font-family: 'Kanit', sans-serif;
+                    text-align: left;
+          }
+
+
+
+.about-benefits-ayurvedico-content { 
+           
+                   font-size: 18px;
+      font-family: 'News+Cycle', sans-serif;
+      color: #555;
+      line-height: 30px;
+      text-align: justify;
+      margin-left: 30px;
+         margin-right: 30px;
+
+
+        
+
+     
+      margin-bottom: 20px; 
+
+               } 
+
+#about-benefits-ayurvedico .about-benefits-ayurvedico-image { 
+                 background-image: url(../img/about-benefits-ayurvedico.webp);
+                 background-size: cover;
+                 background-position: center;
+                 padding-top: 200px;
+               
+                 padding-bottom: 200px;
+
+
+
+               } 
+
+
+
+
+
+#about-benefits-integrazione { 
+
+         text-align: justify;
+    
+             margin-right: 70px;
+         margin-left: 70px;
+         
+       
+       }
+
+#about-benefits-integrazione h1 { 
+
+            color: #996666;
+            
+           
+     
+    
+        margin-left: 30px;
+                    padding-top: 20px;
+                    margin-bottom: 30px;
+                    font-size: 30px;
+                    font-weight: 900;
+                    font-family: 'Kanit', sans-serif;
+                    text-align: center;
+          }
+
+
+.about-benefits-integrazione-content { 
+                   font-size: 18px;
+      font-family: 'News+Cycle', sans-serif;
+      color: #555;
+      line-height: 30px;
+      text-align: justify;
+     
+   margin-left: 30px;
+   margin-right: 30px;
+
+
+        margin-top: 40px;
+
+     
+      margin-bottom: 40px; 
+
+               } 
+
+
+
+#about-benefits-integrazione .about-benefits-integrazione-image { 
+                 background-image: url(../img/about-benefits-integrazione.jpeg);
+                 background-size: cover;
+                 background-position: center;
+                 padding-top: 200px;
+               
+                 padding-bottom: 200px;
+
+
+
+   
+
+
+
+               } 
+
+/* Se siete interessati */
+#about-me-body h1 { 
+            text-align: center;
+            color: #996666;
+            font-family: 'Kanit', sans-serif;
+            font-size: 40px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+          }
+
+#about-me-body .image {
+  padding-bottom: 20px;
+}          
+
+
+
+#about-me-body p { 
+           text-align: justify;
+           color: #555;
+           font-family: 'News+Cycle', sans-serif;
+           font-size: 18px;
+           padding-top: 30px; 
+           padding-bottom: 70px;
+           margin-left: 30px;
+           margin-right: 30px;
+
+
+         }
+
+
+
+
+
+
+
+/* Costellazioni Familiari */
+
+
+/* Benvenuto */
+
+#welcome-family { 
+           background-image: url(../img/welcome-family.jpeg);
+
+           background-size: cover;
+           background-position: center;
+           background-attachment: fixed;
+           padding-top: 100px; /* ingrandimento superiore immagine */
+           padding-bottom: 100px; /* ingrandimento inferiore immagine */
+         }
+
+#welcome-family h1 { 
+              text-align: center;
+              color: #fff; /* colore testo */ 
+              font-family: 'Kanit', sans-serif;
+              font-size: 60px; /* dimensione testo */
+              padding-top: 10px; /* posizione testo */
+              padding-bottom: 10px;
+            }
+
+#welcome-family h2,
+#welcome-family h3 { 
+              text-align: center;
+              color: #fff; 
+              font-family: 'Kanit', sans-serif;
+              font-size: 30px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+            } 
+
+/* Breve presentazione */
+#about-family h1 { 
+            text-align: center;
+            color: #996666;
+            font-family: 'Kanit', sans-serif;
+            font-size: 40px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+          }
+
+#about-family .image {
+  padding-bottom: 20px;
+}          
+
+
+
+#about-family p { 
+           text-align: justify;
+           color: #555;
+           font-family: 'News+Cycle', sans-serif;
+           font-size: 18px;
+           padding-top: 30px; 
+           padding-bottom: 10px;
+           margin-left: 30px;
+           margin-right: 30px;
+
+
+         }
+
+
+
+#about-benefits-family, #about-benefits-family-2 {
+ background-image: url(../img/about-family.jpg);
+            background-size: 100%;
+            background-position: center;
+            background-attachment: fixed;
+
+            
+          padding-bottom: 100px; 
+         
+
+           
+         
+           
+           
+          
+
+}
+
+
+/* I benefici delle Costellazioni Familiari */
+#about-benefits-family { 
+
+        
+         margin-left: 60px;
+         text-align: justify;
+         padding-top: 50px;
+             margin-right: 70px;
+         margin-left: 70px;
+         
+       
+       }
+
+#about-benefits-family h1 { 
+            color: #996666;
+            
+           
+     
+    
+        margin-left: 30px;
+                    padding-top: 20px;
+                    margin-bottom: 30px;
+                    font-size: 30px;
+                    font-weight: 900;
+                    font-family: 'Kanit', sans-serif;
+                    text-align: left;
+          }
+
+
+
+.about-benefits-family-content { 
+           
+                   font-size: 18px;
+      font-family: 'News+Cycle', sans-serif;
+      color: #555;
+      line-height: 30px;
+      text-align: justify;
+      margin-left: 30px;
+         margin-right: 30px;
+
+
+        
+
+     
+      margin-bottom: 20px; 
+
+               } 
+
+#about-benefits-family .about-benefits-family-image { 
+                 background-image: url(../img/about-benefits-family.webp);
+                 background-size: cover;
+                 background-position: center;
+                 padding-top: 200px;
+               
+                 padding-bottom: 200px;
+
+
+
+               } 
+
+
+
+
+
+#about-benefits-family-2 { 
+
+         text-align: justify;
+    
+             margin-right: 70px;
+         margin-left: 70px;
+         
+       
+       }
+
+#about-benefits-family-2 h1 { 
+
+            color: #996666;
+            
+           
+     
+    
+        margin-left: 30px;
+                    padding-top: 20px;
+                    margin-bottom: 30px;
+                    font-size: 30px;
+                    font-weight: 900;
+                    font-family: 'Kanit', sans-serif;
+                    text-align: center;
+          }
+
+
+.about-benefits-family-2-content { 
+                   font-size: 18px;
+      font-family: 'News+Cycle', sans-serif;
+      color: #555;
+      line-height: 30px;
+      text-align: justify;
+     
+   margin-left: 30px;
+   margin-right: 30px;
+
+
+        margin-top: 40px;
+
+     
+      margin-bottom: 40px; 
+
+               } 
+
+
+
+#about-benefits-family-2 .about-benefits-family-2-image { 
+                 background-image: url(../img/about-benefits-family-2.jpeg);
+                 background-size: cover;
+                 background-position: center;
+                 padding-top: 200px;
+               
+                 padding-bottom: 200px;
+
+
+
+   
+
+
+
+               } 
+
+/* Se siete interessati */
+#about-me-body h1 { 
+            text-align: center;
+            color: #996666;
+            font-family: 'Kanit', sans-serif;
+            font-size: 40px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+          }
+
+#about-me-body .image {
+  padding-bottom: 20px;
+}          
+
+
+
+#about-me-body p { 
+           text-align: justify;
+           color: #555;
+           font-family: 'News+Cycle', sans-serif;
+           font-size: 18px;
+           padding-top: 30px; 
+           padding-bottom: 70px;
+           margin-left: 30px;
+           margin-right: 30px;
+
+
+         }
+
+
+
+
+
+
+
+
+
+
+
+/* CSS Recensioni per pagina Home, Reiki, Body e Family */
+
+.testimonials {
+  padding: 40px 0;
+  background: #f5f5f5;
+  text-align: center;
+  color: #555;
+             text-align: center; 
+             font-family: 'Kanit', sans-serif;
+}
+
+.testimonials h1 {
+    font-size: 40px;
+          
+             
+
+}
+
+.inner {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.border {
+  width: 160px;
+  height: 5px;
+  background: #93b586;
+  margin: 26px auto;
+  margin-bottom: 40px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.testimonial {
+  background: #fff;
+  padding: 30px;
+}
+
+.testimonial img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 20px;
+  /* text-transform: uppercase; testo in stampatello */
+  margin: 20px 0;
+}
+
+.stars {
+  color: #f9d71c;
+  margin-bottom: 20px;
+}
+
+.testimonial p {
+  text-align: inherit;
+
+}
+
+@media screen and (max-width:960px) {
+  .col {
+    flex:100%;
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .col {
+    flex:100%;
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+/* Diritti di utilizzo */ 
+
+
+/* Titolo pagina */                           
+#title-usage-rights { 
+                 background: #8f8f8f;
+                 padding-top: 50px; 
+                 padding-bottom: 50px;
+               }
+
+#title-usage-rights h1 { 
+                    text-align: center;
+                    color: #fff;
+                    font-family: 'Kanit', sans-serif;
+                    font-size: 60px;
+                    padding-top: 30px;
+                    padding-bottom: 10px;
+                    margin-right: 25px;
+                  }
+
+/* Contenuti e immagini */
+#text-usage-rights {
+                background: #fff;
+              }
+
+#text-usage-rights h1,
+#text-usage-rights h2 { 
+                   text-align: justify;
+                   color: #555;
+                   font-family: 'Kanit', sans-serif;
+                   font-size: 40px;
+                   padding-top: 30px;
+                   padding-bottom: 10px;
+                 }
+
+#text-usage-rights p {
+                  text-align: justify;
+                  color: #555;
+                  font-family: 'News+Cycle', sans-serif;
+                  font-size: 20px;
+                  padding-top: 10px; 
+                  padding-bottom: 10px;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Cookie */ 
+
+
+/* Titolo pagina */                           
+#title-cookie { 
+                 background: #8f8f8f;
+                 padding-top: 50px; 
+                 padding-bottom: 50px;
+               }
+
+#title-cookie h1 { 
+                    text-align: center;
+                    color: #fff;
+                    font-family: 'Kanit', sans-serif;
+                    font-size: 60px;
+                    padding-top: 30px;
+                    padding-bottom: 10px;
+                    margin-right: 25px;
+                  }
+
+/* Informativa sui cookie */
+#text-cookie {
+                background: #fff;
+              }
+
+#text-cookie h1,
+#text-cookie h2 { 
+                   text-align: justify;
+                   color: #555;
+                   font-family: 'Kanit', sans-serif;
+                   font-size: 40px;
+                   padding-top: 30px;
+                   padding-bottom: 10px;
+                 }
+
+#text-cookie p {
+                  text-align: justify;
+                  color: #555;
+                  font-family: 'News+Cycle', sans-serif;
+                  font-size: 20px;
+                  padding-top: 10px; 
+                  padding-bottom: 10px;
+                }
